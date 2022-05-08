@@ -11,8 +11,6 @@ class Nota extends ModeloBase{
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
-
-        return $this;
     }
 
     public function getContenido()
@@ -23,8 +21,6 @@ class Nota extends ModeloBase{
     public function setContenido($contenido)
     {
         $this->contenido = $contenido;
-
-        return $this;
     }
 }
 ?>

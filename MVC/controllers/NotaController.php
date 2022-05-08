@@ -3,10 +3,10 @@ class NotaController {
     public function listar(){
         require_once 'models/nota.php';
         $nota = new Nota();
-        $nota->setContenido('Hola mundo desde nota');
         $nota->setNombre('Nota 1');
+        $nota->setContenido('Hola mundo desde nota');
 
-        require_once 'views/nota/listar.php';
+        require_once 'views/nota/listar.phtml';
     }
     public function crear(){
 

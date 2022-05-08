@@ -1,6 +1,6 @@
 <h1>Bienvenido</h1>
 <?php
-require_once 'controllers/usuario.php';
+require_once 'autoload.php';
 
 $controller = $_GET["controller"] . 'Controller';
 if (isset($controller) && class_exists($controller)) {
