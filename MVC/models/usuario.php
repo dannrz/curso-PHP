@@ -4,6 +4,11 @@ class Usuario extends ModeloBase
 {
     public $nombre, $apellidos, $email, $passwd;
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function getNombre()
     {
         return $this->nombre;

@@ -3,6 +3,11 @@ require_once 'modeloBase.php';
 class Nota extends ModeloBase{
     public $nombre, $contenido;
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function getNombre()
     {
         return $this->nombre;

@@ -6,6 +6,8 @@ class NotaController {
         $nota->setNombre('Nota 1');
         $nota->setContenido('Hola mundo desde nota');
 
+        $notas = $nota->conseguirTodos('notas');
+
         require_once 'views/nota/listar.phtml';
     }
     public function crear(){
