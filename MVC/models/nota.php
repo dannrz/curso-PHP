@@ -1,31 +1,47 @@
-<?php 
+<?php
 require_once 'modeloBase.php';
-class Nota extends ModeloBase{
-    public $nombre, $contenido;
+class Nota extends ModeloBase
+{
+    private $userId, $content, $title;
 
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function getNombre()
+    public function getUserId()
     {
-        return $this->nombre;
+        return $this->userId;
+    }
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
     }
 
-    public function setNombre($nombre)
+    public function getContent()
     {
-        $this->nombre = $nombre;
+        return $this->content;
+    }
+    public function setContent($content)
+    {
+        $this->content = $content;
     }
 
-    public function getContenido()
+    public function getTitle()
     {
-        return $this->contenido;
+        return $this->title;
     }
-
-    public function setContenido($contenido)
+    public function setTitle($title)
     {
-        $this->contenido = $contenido;
+        $this->title = $title;
+    }
+    public function saveNote()
+    {
+        $sql = "INSERT INTO notas (usuario_id,titulo,descripcion,fecha) VALUES (?,?,?,now())";
+        $save = $this->db->prepare($sql);
+        $save->bind_param("sss", $this->userId, $this->title, $this->content);
+        $save->execute();
+
+        return $save;
     }
 }
-?>

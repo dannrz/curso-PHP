@@ -10,7 +10,7 @@ class ModeloBase{
     }
 
     public function conseguirTodos($tabla){
-        $query = $this->db->query("SELECT * FROM {$tabla} order by id DESC");
+        $query = $this->db->query("SELECT * FROM $tabla order by id DESC");
         return $query;
     }
 }
