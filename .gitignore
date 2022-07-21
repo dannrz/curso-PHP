@@ -1,3 +1,4 @@
 librerias-php/vendor
 *.jpg
 composer.*
+proyecto-php-mvc/assets/img/
