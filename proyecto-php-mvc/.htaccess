@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+#Activar rewrite
+RewriteEngine on
+ErrorDocument 404 http://127.0.0.1/cursos/proyecto-php-mvc/error/
+
+RewriteCond %(SCRIPT_FILENAME) !-d
+RewriteCond %(SCRIPT_FILENAME) !-f
+
+RewriteRule ^(.*)/(.*) index.php?c=$1&a=$2
+
+</IfModule>
